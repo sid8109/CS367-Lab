@@ -74,7 +74,7 @@ if solution:
         print(step)
 else:
     print("No solution found.")
-
+dfs_steps=len(solution)
 print("BFS Solution")
 solution = bfs(start_state, goal_state)
 bfs_steps = 0
@@ -85,3 +85,10 @@ if solution:
         print(step)
 else:
     print("No solution found.")
+bfs_steps=len(solution)
+if dfs_steps < bfs_steps:
+    print("DFS is better")
+elif bfs_steps < dfs_steps:
+    print("BFS is better")
+else:
+    print("Both are equal")
