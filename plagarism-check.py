@@ -146,12 +146,13 @@ def search():
     # print(state[2])
     return state[2]
 
-similarity = search()
+non_similar_words = search()
+similar_words = max(sum(letters1),sum(letters2)) - non_similar_words;
 
-print(similarity)
+print(similar_words)
 
-ratio = similarity/(max(sum(letters1),sum(letters2)))
-if ratio < 0.3:
+ratio = similar_words/(max(sum(letters1),sum(letters2)))
+if ratio >= 0.3:
     print("Plagiarism detected")
 else:
     print("No plagiarism detected")
