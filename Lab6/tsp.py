@@ -56,10 +56,10 @@ class HopfieldTSP:
 
 if __name__ == "__main__":
     num_cities = 10
-    # np.random.seed(42)
+    np.random.seed(42)  
     distances = np.random.randint(1, 100, (num_cities, num_cities))
-    np.fill_diagonal(distances, 0) 
-    print(distances)
+    np.fill_diagonal(distances, 0)  
+    distances = (distances + distances.T) // 2 
 
     tsp_solver = HopfieldTSP(num_cities, distances)
     solution = tsp_solver.solve()
